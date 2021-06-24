@@ -4,18 +4,20 @@ import classes from "./Counter.module.css";
 
 const Counter = () => {
   const counter = useSelector((state) => state.counter);
-  const showCounter= useSelector((state)=>state.showCounter);
+  const showCounter = useSelector((state) => state.showCounter);
   const dispatch = useDispatch();
   const incrementHandler = () => {
     dispatch({ type: "increment" });
   };
   const increaseHandler = () => {
-    dispatch({ type: "increase", amount:5});
+    dispatch({ type: "increase", amount: 5 });
   };
   const decrementHandler = () => {
     dispatch({ type: "decrement" });
   };
-  const toggleCounterHandler = () => {dispatch({ type: "toggle" });};
+  const toggleCounterHandler = () => {
+    dispatch({ type: "toggle" });
+  };
 
   return (
     <main className={classes.counter}>
@@ -27,7 +29,6 @@ const Counter = () => {
         <button onClick={decrementHandler}>Decrement</button>
       </div>
       <button onClick={toggleCounterHandler}>Toggle Counter</button>
-      
     </main>
   );
 };
